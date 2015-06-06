@@ -13,13 +13,15 @@ namespace SqueezeMap {
 		#region Variables
 		Graphics gb, gf; Bitmap gi;
 		int fx, fy, fx2, fy2;
-		Bitmap cwp = new Bitmap("E:\\Shared\\!COREY'S WANTED PICTURE.png");
+		Bitmap cwp;
 		int ix, iy, ix2, iy2;
 
 		#endregion Variables
 
 		public Form1() {InitializeComponent();}
 		private void Form1_Load(object sender, EventArgs e) {
+			//cwp = new Bitmap("E:\\Shared\\!COREY'S WANTED PICTURE.png");
+			cwp = new Bitmap("\\\\NIHILKRI-PC\\Shared\\!COREY'S WANTED PICTURE.png");
 			ix2 = (ix = cwp.Width) / 2; iy2 = (iy = cwp.Height) / 2;
 
 			Width = ix * 5; Height = iy * 5;
@@ -40,8 +42,8 @@ namespace SqueezeMap {
 
 			gb.Clear(Color.Black);
 			gb.DrawImage(cwp, 0, 0);
-			gb.DrawString(fx + ", " + fy, Font, Brushes.White, 0, iy + 6);
-			gb.DrawString(ix + ", " + iy, Font, Brushes.White, 0, iy + 18);
+			gb.DrawString(fx + ", " + fy, Font, Brushes.White, fx-100, iy + 6);
+			gb.DrawString(ix + ", " + iy, Font, Brushes.White, fx-100, iy + 18);
 
 			double tx, ty, sx, sy; SolidBrush b; int tfr=0;
 			for(double a = 0.2 ; a < 5.2 ; a += 0.2) {
